@@ -415,14 +415,14 @@ hdmi_out_xilinx hdmiio(
 
 //------- Sigma-Delta DAC ---------
 dac dac_l(
-	.I_CLK(clk_sys),
+	.I_CLK(clk_bus),
 	.I_RESET(areset),
 	.I_DATA({2'b00, !audio_mix_l[15], audio_mix_l[14:4], 2'b00}),
 	.O_DAC(AUDIO_L)
 );
 
 dac dac_r(
-	.I_CLK(clk_sys),
+	.I_CLK(clk_bus),
 	.I_RESET(areset),
 	.I_DATA({2'b00, !audio_mix_r[15], audio_mix_r[14:4], 2'b00}),
 	.O_DAC(AUDIO_R)
